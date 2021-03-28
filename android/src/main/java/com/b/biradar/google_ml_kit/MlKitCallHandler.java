@@ -156,10 +156,13 @@ public class MlKitCallHandler implements MethodChannel.MethodCallHandler {
             }
         } else if (model.equals("bytes")) {
             Map<String, Object> metaData = (Map<String, Object>) imageData.get("metadata");
+            int rotationCompensation = ((int) metaData.get("rotation")) % 360;
+            Log.e("rotation Compensation", String.valueOf(rotationCompensation));
+            Log.e("width",String.valueOf((double)metaData.get("width")));
             inputImage = InputImage.fromByteArray((byte[]) imageData.get("bytes"),
                     (int) (double) metaData.get("width"),
                     (int) (double) metaData.get("height"),
-                    (int) metaData.get("rotation"),
+                    rotationCompensation,
                     InputImage.IMAGE_FORMAT_NV21);
             return inputImage;
 

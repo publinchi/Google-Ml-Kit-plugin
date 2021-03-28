@@ -1,15 +1,11 @@
-import 'package:flutter/material.dart';
+part of 'text_detector_view.dart';
 
-import 'package:google_ml_kit/google_ml_kit.dart';
-import 'package:image_picker/image_picker.dart';
-import 'dart:io';
-
-class TextDetectorView extends StatefulWidget {
+class ImageTextDetectorView extends StatefulWidget {
   @override
-  _TextDetectorViewState createState() => _TextDetectorViewState();
+  _ImageTextDetectorViewState createState() => _ImageTextDetectorViewState();
 }
 
-class _TextDetectorViewState extends State<TextDetectorView> {
+class _ImageTextDetectorViewState extends State<ImageTextDetectorView> {
   String result = '';
   List<ImageLabel> imageLabels = <ImageLabel>[];
   RecognisedText _recognisedText;
@@ -38,7 +34,7 @@ class _TextDetectorViewState extends State<TextDetectorView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Image Labeler'),
+        title: Text('Text Detector'),
       ),
       body: ListView(shrinkWrap: true, children: [
         filePath == null

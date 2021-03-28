@@ -1,5 +1,5 @@
 import 'package:google_ml_kit_example/DetectorViews/digital_ink_recogniser_view.dart';
-import 'package:google_ml_kit_example/DetectorViews/text_detector_view.dart';
+import 'package:google_ml_kit_example/DetectorViews/TextDetectors/text_detector_view.dart';
 
 import 'DetectorViews/detector_views.dart';
 

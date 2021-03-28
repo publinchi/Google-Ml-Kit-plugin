@@ -136,7 +136,7 @@ class InputImageData {
   final Size size;
 
   //Image rotation degree
-  final InputImageRotation imageRotation;
+  final int imageRotation;
 
   final InputImageFormat inputImageFormat;
 
@@ -150,7 +150,7 @@ class InputImageData {
     var map = <String, dynamic>{
       'width': size.width,
       'height': size.height,
-      'rotation': _imageRotationToInt(imageRotation),
+      'rotation': imageRotation,
       'imageFormat': _imageFormatToInt(inputImageFormat)
     };
     return map;
