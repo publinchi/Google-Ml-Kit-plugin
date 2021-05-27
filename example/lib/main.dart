@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:google_ml_kit_example/NlpDetectorViews/entity_extraction_view.dart';
 import 'package:google_ml_kit_example/NlpDetectorViews/language_translator_view.dart';
+import 'package:google_ml_kit_example/NlpDetectorViews/smart_reply_view.dart';
 
 import 'NlpDetectorViews/language_identifier_view.dart';
 import 'VisionDetectorViews/detector_views.dart';
@@ -44,7 +45,7 @@ class Home extends StatelessWidget {
               child: Column(
                 children: [
                   ExpansionTile(
-                    title: const Text("Vision Api's"),
+                    title: const Text("Vision"),
                     children: [
                       CustomCard(
                         'Image Label Detector',
@@ -61,7 +62,7 @@ class Home extends StatelessWidget {
                         BarcodeScannerView(),
                         featureCompleted: true,
                       ),
-                      CustomCard('Pose Detector view', PoseDetectorView()),
+                      CustomCard('Pose Detector', PoseDetectorView()),
                       CustomCard('Digital Ink Recogniser', DigitalInkView()),
                       CustomCard(
                         'Text Detector',
@@ -74,13 +75,14 @@ class Home extends StatelessWidget {
                     height: 20,
                   ),
                   ExpansionTile(
-                    title: const Text("NLP Api's"),
+                    title: const Text("Natural Language"),
                     children: [
                       CustomCard(
                           'Language Identifier', LanguageIdentifierView()),
                       CustomCard(
                           'Language Translator', LanguageTranslatorView()),
-                      CustomCard('Entity Extractor', EntityExtractionView())
+                      CustomCard('Entity Extractor', EntityExtractionView()),
+                      CustomCard('Smart Reply', SmartReplyView())
                     ],
                   ),
                 ],
